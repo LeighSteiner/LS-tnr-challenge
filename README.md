@@ -27,6 +27,19 @@ see the code for the current search results widget [here](src/Search.js).
 We recommend you spend between 2-4 hours on this and go ahead and send us the result. Please also add to this readme any 
 questions you would want to ask, and the assumptions you made.
 
+# Assumptions 
+* wcag compliance is a top priority 
+* test coverage is a middle priority 
+* mobile-functionality is a top priority 
+* given the time constraint, i'm presuming support for CSS3/HTML5 
+* internationalization is a non-priority (for now)
+
+# Questions 
+* what browsers and versions do we prioritize writing for/supporting? 
+* are there any breakpoints to manage for other than "desktop" and "mobile"
+* what do we want to tell our users when there is no response to their search query? (is no answer a sufficient answer?)
+* are there any languages other than english that we expect to support?
+
 
 
 # Docs from CRA:
