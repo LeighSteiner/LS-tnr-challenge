@@ -15,8 +15,8 @@ code {
 
 /*ELEMENTS*/
 .searchCard__image {
-	width: 300px;
-	height: 200px;
-	object-fit: cover;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
 }
 /*MODIFIERS*/

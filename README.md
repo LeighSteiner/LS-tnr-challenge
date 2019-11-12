@@ -1,48 +1,54 @@
 # Code Challenge
+
 Welcome to the code challenge part of the application process for TNR.
 
 ## Instructions
-We want you to spend 2-4 hours on this, and you might not finish all of the features in that time. We'd prefer to see 
-fewer finished features rather than many half-finished features. See below for priorities. 
 
-We're also looking for well-organized code, and a good looking result. And we'd like to see how you think about coding. 
+We want you to spend 2-4 hours on this, and you might not finish all of the features in that time. We'd prefer to see
+fewer finished features rather than many half-finished features. See below for priorities.
+
+We're also looking for well-organized code, and a good looking result. And we'd like to see how you think about coding.
 So, document your process, any questions you had, and any assumptions that you made.
 
 ## The Task
+
 Your challenge is to build and style React components for our new search page. Here are the assets from the designer (these are not actually from our designer):
 
 ### The top 3 results should look like this:
+
 ![desktop-top](design-assets/desktop-top-results.png)
 ![mobile-top](design-assets/mobile-top-results.png)
 
 <br /><br /><br />
+
 ### The rest of the results should look like this:
+
 ![desktop-lower](design-assets/desktop-lower-results.png)
 ![mobile-lower](design-assets/mobile-lower-results.png)
 
+Notice that there are desktop designs, and mobile designs. Please take this starter app and implement the designs. You can
+see the code for the current search results widget [here](src/Search.js).
 
-Notice that there are desktop designs, and mobile designs. Please take this starter app and implement the designs. You can 
-see the code for the current search results widget [here](src/Search.js). 
-
-We recommend you spend between 2-4 hours on this and go ahead and send us the result. Please also add to this readme any 
+We recommend you spend between 2-4 hours on this and go ahead and send us the result. Please also add to this readme any
 questions you would want to ask, and the assumptions you made.
 
-# Assumptions 
-* wcag compliance is a top priority 
-* test coverage is a middle priority 
-* mobile-functionality is a top priority 
-* given the time constraint, i'm presuming support for CSS3/HTML5 
-* internationalization is a non-priority (for now)
-* i'm not installing React-Router and doing dynamic linking for the search results, although I'd probably want to at least consider that option in a production scenario, partially because of making sure that the links in this demo actually work, and partially to avoid tangling with the focus-management challenges that come with full-SPA builds in the allotted time frame.
+# Assumptions
 
-# Questions 
-* what browsers and versions do we prioritize writing for/supporting? 
-* are there any breakpoints to manage for other than "desktop" and "mobile"
-* what do we want to tell our users when there is no response to their search query? (is no answer a sufficient answer?)
-* are there any languages other than english that we expect to support?
-* i notice there isn't alt-text for some or all of the lede images -- how do we ensure this gap gets filled going forward? 
+- wcag compliance is a top priority
+- test coverage is a middle priority
+- mobile-functionality is a top priority
+- given the time constraint, i'm presuming support for CSS3/HTML5
+- internationalization is a non-priority (for now)
+- i'm not installing React-Router and doing dynamic linking for the search results, although I'd probably want to at least consider that option in a production scenario, partially because of making sure that the links in this demo actually work, and partially to avoid tangling with the focus-management challenges that come with full-SPA builds in the allotted time frame.
+- i didn't see a specified linter, so i used the prettier set up i use on my own projects that have a CRA base.
 
+# Questions
 
+- what browsers and versions do we prioritize writing for/supporting?
+- are there any breakpoints to manage for other than "desktop" and "mobile"
+- what do we want to tell our users when there is no response to their search query? (is no answer a sufficient answer?)
+- are there any languages other than english that we expect to support?
+- i notice there isn't alt-text for some or all of the lede images -- how do we ensure this gap gets filled going forward?
 
 # Docs from CRA:
 
