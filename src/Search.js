@@ -79,11 +79,56 @@ class SearchResults extends React.Component {
     })
   }
 
-  render() {
-    return <TitlesOnlyListContainer articles={this.state.articles}/>
+  // render() {
+  //   return <TitlesOnlyListContainer articles={this.state.articles}/>
+  // }
+  render(){
+    return( 
+          <div>
+            <span>
+              {this.state.articles.length ? <span>Your results: <span>{this.props.term}</span> </span> :null}
+            </span>
+            <TopCardList  articles={this.state.articles.slice(0,3)} />
+            <LowerResultList articles={this.state.articles.slice(3)} />
+          </div>
+          )
   }
 }
 
+const TopCardList = (props) => {
+  return (
+    <ol>
+      {
+        props.articles.map((article, ind) => (
+              <li className="searchCard searchCard--topThree" key={ind}>
+                <a href={article.urlFull}>
+               {
+                article.ledeImage ? <img className="searchCard__image" src={article.ledeImage.src} /> :
+                <img className="searchCard__image" src="http://placekitten.com/g/200/200"/>
+               }
+               </a>
+              </li> 
+          )
+        )
+      }
+    </ol>
+  )
+}
+
+const LowerResultList = (props) => {
+  return (
+    <ul>
+     {
+      props.articles.map((article, ind) => (
+          <li className="searchCard searchCard--rest" key={ind}>
+               <a href={article.urlFull}>{article.title}</a>
+          </li>
+        )
+      )
+    }
+    </ul>
+  )
+}
 SearchResults.propTypes = {
   term: PropTypes.string,
   limit: PropTypes.number,
