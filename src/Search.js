@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 
 class Search extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Search extends React.Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-      <SearchResults term={this.state.value} />
+        <SearchResults term={this.state.value} />
       </main>
     );
   }
@@ -129,16 +129,32 @@ const TopCardList = props => {
         <li className="searchCard searchCard--topThree" key={ind}>
           <a href={article.urlFull}>
             {article.ledeImage ? (
-              <img className="searchCard__image" src={article.ledeImage.src} alt={article.ledeAltImage || "this needs a descriptive alt tag!"} />
+              <img
+                className="searchCard__image"
+                src={article.ledeImage.src}
+                alt={
+                  article.ledeAltImage || "this needs a descriptive alt tag!"
+                }
+              />
             ) : (
-              <img alt="filler kitten"
+              <img
+                alt="filler kitten"
                 className="searchCard__image"
                 src="http://placekitten.com/g/200/200"
               />
             )}
-            <span className="topResults__year">{article.publishedAt.slice(0,4)}</span>
-            <h4 dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(article.title)}} className="topResults__title"/>
-            <span className="topResults__author">{article.authors.map(author => author.name)}</span>
+            <span className="topResults__year">
+              {article.publishedAt.slice(0, 4)}
+            </span>
+            <h4
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(article.title)
+              }}
+              className="topResults__title"
+            />
+            <span className="topResults__author">
+              {article.authors.map(author => author.name)}
+            </span>
           </a>
         </li>
       ))}
@@ -149,25 +165,38 @@ const TopCardList = props => {
 const LowerResultList = props => {
   return (
     <span>
-      { props.articles.length ? <span className="lowerResultList__title">MOST POPULAR</span>: null}
-    <ul className="lowerResultList">
-      {props.articles.map((article, ind) => (
-        <li className="searchCard searchCard--rest" key={ind}>
-          <a href={article.urlFull} >
-            {
-              article.ledeImage ?  (
-                <img className="lowerResult__image" src={article.ledeImage.src} alt={article.ledeAltImage || "this needs a descriptive alt tag!"} />
-              ) : <img
-                alt="filler kitten"
-                className="lowerResult__image"
-                src="http://placekitten.com/g/200/200"
+      {props.articles.length ? (
+        <span className="lowerResultList__title">MOST POPULAR</span>
+      ) : null}
+      <ul className="lowerResultList">
+        {props.articles.map((article, ind) => (
+          <li className="searchCard searchCard--rest" key={ind}>
+            <a href={article.urlFull}>
+              {article.ledeImage ? (
+                <img
+                  className="lowerResult__image"
+                  src={article.ledeImage.src}
+                  alt={
+                    article.ledeAltImage || "this needs a descriptive alt tag!"
+                  }
+                />
+              ) : (
+                <img
+                  alt="filler kitten"
+                  className="lowerResult__image"
+                  src="http://placekitten.com/g/200/200"
+                />
+              )}
+              <span
+                className="lowerResult__title"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(article.title)
+                }}
               />
-            }
-            <span className="lowerResult__title" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(article.title)}}/>
-          </a>
-        </li>
-      ))}
-    </ul>
+            </a>
+          </li>
+        ))}
+      </ul>
     </span>
   );
 };
