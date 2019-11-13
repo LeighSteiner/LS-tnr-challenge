@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import DOMPurify from "dompurify";
 
+import logo from './logo.jpg'
+import title from './TNRTitle.png'
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,9 @@ class Search extends React.Component {
 
   render() {
     return (
-      <main>
+      <div>
+      <CustomNav />
+      <main id="main">
         Search:{" "}
         <input
           type="text"
@@ -26,6 +31,7 @@ class Search extends React.Component {
         />
         <SearchResults term={this.state.value} />
       </main>
+      </div>
     );
   }
 }
@@ -110,8 +116,8 @@ class SearchResults extends React.Component {
       <div>
         <span>
           {this.state.articles.length ? (
-            <span>
-              Your results: <span>{this.props.term}</span>{" "}
+            <span className="topResultsList__title">
+              YOUR RESULTS: <i className="searchTerm">{this.props.term}</i>{" "}
             </span>
           ) : null}
         </span>
@@ -122,6 +128,17 @@ class SearchResults extends React.Component {
   }
 }
 
+const CustomNav = __ => (
+  <nav className="nav">
+    <a className="skipNav" href="#main">skip navigation </a>
+    <i class="fas fa-bars fa-2x hamburgerIcon" />
+    <img className="logo" src={logo} />
+    <img className="header" src={title} />
+    <a className="nav__link"> MAGAZINE </a>
+    <a className="nav__link"> SUBSCRIBE </a>
+
+  </nav>
+)
 const TopCardList = props => {
   return (
     <ul className="topResults">
@@ -193,6 +210,9 @@ const LowerResultList = props => {
                   __html: DOMPurify.sanitize(article.title)
                 }}
               />
+              <span className="lowerResult__author">
+              {article.authors.map(author => author.name)}
+            </span>
             </a>
           </li>
         ))}
