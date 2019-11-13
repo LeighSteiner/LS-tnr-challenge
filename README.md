@@ -41,6 +41,7 @@ questions you would want to ask, and the assumptions you made.
 - internationalization is a non-priority (for now)
 - i'm not installing React-Router and doing dynamic linking for the search results, although I'd probably want to at least consider that option in a production scenario, partially because of making sure that the links in this demo actually work, and partially to avoid tangling with the focus-management challenges that come with full-SPA builds in the allotted time frame.
 - i didn't see a specified linter, so i used the prettier set up i use on my own projects that have a CRA base (see package.json for "format" script).
+- the search results had some markup in the titles, so i "played it safe" using the dompurify library to set the innerHTML of the article titles and preserve the implied formatting.
 
 # Questions
 
