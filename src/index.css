@@ -20,8 +20,8 @@ a {
 /*BLOCKS*/
 .header {
   height: 40px;
-  padding-left: calc((100vw - 370px)/2)
- /* justify-content: center;*/
+  padding-left: calc((100vw - 370px) / 2);
+  /* justify-content: center;*/
 }
 .logo {
   height: 30px;
@@ -36,9 +36,9 @@ a {
   display: inline;
 }
 .searchTerm {
- font-size: 1.7em;
- font-family: serif;
- color: black;
+  font-size: 1.7em;
+  font-family: serif;
+  color: black;
 }
 .skipNav {
   position: absolute;
@@ -89,7 +89,7 @@ a {
   display: inline-block;
 }
 .lowerResult__author {
-  font-size: .7em;
+  font-size: 0.7em;
   font-weight: bolder;
   margin-left: 7px;
 }
@@ -109,7 +109,7 @@ a {
 }
 .lowerResultList__title {
   color: red;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bolder;
   margin-left: 40px;
   font-family: arial-black;
@@ -117,13 +117,13 @@ a {
   margin-top: 20px;
 }
 .nav__link {
-   font-family: arial-black;
-   font-size: .8em;
-   padding-top: 25px;
+  font-family: arial-black;
+  font-size: 0.8em;
+  padding-top: 25px;
 }
 .topResultsList__title {
   color: red;
-  font-size: .7em;
+  font-size: 0.7em;
   font-weight: bolder;
   margin-left: calc((100vw - 900px) / 2);
   font-family: arial-black;
@@ -133,20 +133,19 @@ a {
 }
 .topResults__author {
   font-family: arial-black;
-  font-size: .7em;
-
+  font-size: 0.7em;
 }
 .topResults__year {
-	color:gray;
-	font-family: arial-black;
-	font-size: .6em;
+  color: gray;
+  font-family: arial-black;
+  font-size: 0.6em;
 }
 .topResults__title {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	font-family: "Times New Roman", Times, serif;
-	font-size: 1.3em;
-	font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3em;
+  font-weight: normal;
 }
 /*MODIFIERS*/
 .searchCard--rest {
