@@ -1,3 +1,9 @@
+/*
+  the code is organized in a slightly modified BEM
+  format.  if you're curious about my approach to 
+  CSS organization, i wrote an article about it 
+  here: https://bit.ly/2Qlw6bg 
+*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,11 +12,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 a {
   text-decoration: none;
@@ -28,6 +29,12 @@ a {
 .logo {
   height: 30px;
   padding-top: 10px;
+}
+.lowerResultList {
+  list-style: none;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-right: 15px;
 }
 .nav {
   display: grid;
@@ -77,21 +84,8 @@ a {
   margin-left: calc((100vw - 975px) / 2);
   margin-right: calc((100vw - 975px) / 2);
 }
-.lowerResultList {
-  list-style: none;
-  padding-bottom: 20px;
-  margin-top: 0px;
-  margin-right: 15px;
-}
+
 /*ELEMENTS*/
-.searchCard__image {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-}
-.searchCard__title {
-  display: inline-block;
-}
 .lowerResult__author {
   font-size: 0.7em;
   font-weight: bolder;
@@ -124,13 +118,39 @@ a {
   font-size: 0.8em;
   padding-top: 25px;
 }
+.search__input {
+  line-height: 2em;
+}
 .search__label {
   margin-left: 20px;
   line-height: 2em;
+  font-size: 0.8em;
   margin-right: 10px;
+  font-family: arial-black;
 }
-.search__input {
-  line-height: 2em;
+.searchCard__image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.searchCard__title {
+  display: inline-block;
+}
+.topResults__author {
+  font-family: arial-black;
+  font-size: 0.7em;
+}
+.topResults__title {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.topResults__year {
+  color: gray;
+  font-family: arial-black;
+  font-size: 0.6em;
 }
 .topResultsList__title {
   color: red;
@@ -142,28 +162,13 @@ a {
   margin-top: 30px;
   margin-bottom: 10px;
 }
-.topResults__author {
-  font-family: arial-black;
-  font-size: 0.7em;
-}
-.topResults__year {
-  color: gray;
-  font-family: arial-black;
-  font-size: 0.6em;
-}
-.topResults__title {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.3em;
-  font-weight: normal;
-}
+
 /*MODIFIERS*/
 .searchCard--rest {
   display: inline;
   border-top: 2px solid red;
   padding-top: 25px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   height: 40px;
   padding-right: 20px;
   line-height: 4.3em;
@@ -172,29 +177,26 @@ a {
 /*MOBILE*/
 @media only screen and (max-width: 600px) {
   /*top results*/
-  .topResults {
-    grid-template-columns: 1fr;
-    width: 400px;
-    margin-left: calc((100vw - 400px) / 2);
-  }
-  .topResultsList__title {
-    margin-left: calc((100vw - 400px) / 2);
-  }
   .searchCard--topThree {
     display: grid;
     grid-template-columns: 1fr;
     margin-bottom: 30px;
   }
-  .topResults__year {
-    display: block;
+  .topResults {
+    grid-template-columns: 1fr;
+    width: 400px;
+    margin-left: calc((100vw - 400px) / 2);
   }
   .topResults__title {
     width: 300px;
   }
-  /*nav*/
-  .nav {
-    grid-template-columns: 30px 30px auto 110px 110px;
+  .topResults__year {
+    display: block;
   }
+  .topResultsList__title {
+    margin-left: calc((100vw - 400px) / 2);
+  }
+  /*nav*/
   .header {
     display: none;
   }
@@ -204,14 +206,30 @@ a {
   .nav__link--sub {
     grid-column: 5;
   }
+  .nav {
+    grid-template-columns: 30px 30px auto 110px 110px;
+  }
   /*lower results*/
+  .lowerResult__image {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .lowerResult__text {
+    grid-column: 2;
+  }
+  .lowerResult__title {
+    font-size: 1em;
+    word-wrap: break-word;
+  }
+  .lowerResultList__title {
+    margin-left: 10px;
+  }
   .lowerResultList {
     display: grid;
     grid-template-columns: 1fr;
     padding-left: unset;
-  }
-  .lowerResultList__title {
-    margin-left: 10px;
   }
   .searchCard--rest {
     padding: unset;
@@ -228,18 +246,5 @@ a {
   .searchCard--restLink {
     display: grid;
     grid-template-columns: 40px auto;
-  }
-  .lowerResult__image {
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .lowerResult__title {
-    font-size: 1em;
-    word-wrap: break-word;
-  }
-  .lowerResult__text {
-    grid-column: 2;
   }
 }

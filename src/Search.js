@@ -5,6 +5,13 @@ import CustomNav from "./CustomNav";
 import TopCardList from "./TopCardList";
 import LowerResultList from "./LowerResultList";
 
+/*
+  it felt a little outside the remit of this challenge, 
+  but in a real world context, i would ask about revising 
+  these components to be functional components using 
+  useState and useEffect
+*/
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -22,11 +29,11 @@ class Search extends React.Component {
     return (
       <div>
         <CustomNav />
-        <main id="main">
+        <main tabIndex={0} id="main">
           <span className="search">
             <label className="search__label" htmlFor="search-input">
               {" "}
-              Search:{" "}
+              SEARCH:{" "}
             </label>
             <input
               id="search-input"

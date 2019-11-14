@@ -1,5 +1,28 @@
 # Code Challenge
 
+# Leigh's Input
+
+## Assumptions
+
+- wcag compliance is a top priority
+- test coverage is a middle priority
+- mobile-functionality is a top priority
+- given the time constraint, i'm presuming support for CSS3/HTML5
+- internationalization is a non-priority (for now)
+- i'm not installing React-Router and doing dynamic linking for the search results, although I'd probably want to at least consider that option in a production scenario, partially because of making sure that the links in this demo actually work, and partially to avoid tangling with the focus-management challenges that come with full-SPA builds in the allotted time frame.
+- i didn't see a specified linter, so i used the prettier set up i use on my own projects that have a CRA base (see package.json for "format" script).
+- the search results had some markup in the titles, so i "played it safe" using the dompurify library to set the innerHTML of the article titles and preserve the implied formatting.
+- I used PropTypes because that was the established pattern in the set up code, but in a production scenario, I'd love to have been a part of the conversation about PropTypes vs. TypeScript.
+
+## Questions
+
+- what browsers and versions do we prioritize writing for/supporting?
+- are there any breakpoints to manage for other than the "desktop" and "mobile" defined in the assets?
+- between those two breakpoints, what kinds of degradation/growth behavior do we want to see from the page elements?
+- what do we want to tell our users when there is no response to their search query? (is no answer a sufficient answer, or do we want an actual message informing users of what happened with more specificity?)
+- are there any languages other than english that we expect to support?
+- i notice there isn't alt-text for some or all of the lede images -- how do we ensure this gap gets filled going forward?
+
 Welcome to the code challenge part of the application process for TNR.
 
 ## Instructions
@@ -31,25 +54,6 @@ see the code for the current search results widget [here](src/Search.js).
 
 We recommend you spend between 2-4 hours on this and go ahead and send us the result. Please also add to this readme any
 questions you would want to ask, and the assumptions you made.
-
-# Assumptions
-
-- wcag compliance is a top priority
-- test coverage is a middle priority
-- mobile-functionality is a top priority
-- given the time constraint, i'm presuming support for CSS3/HTML5
-- internationalization is a non-priority (for now)
-- i'm not installing React-Router and doing dynamic linking for the search results, although I'd probably want to at least consider that option in a production scenario, partially because of making sure that the links in this demo actually work, and partially to avoid tangling with the focus-management challenges that come with full-SPA builds in the allotted time frame.
-- i didn't see a specified linter, so i used the prettier set up i use on my own projects that have a CRA base (see package.json for "format" script).
-- the search results had some markup in the titles, so i "played it safe" using the dompurify library to set the innerHTML of the article titles and preserve the implied formatting.
-
-# Questions
-
-- what browsers and versions do we prioritize writing for/supporting?
-- are there any breakpoints to manage for other than "desktop" and "mobile"
-- what do we want to tell our users when there is no response to their search query? (is no answer a sufficient answer?)
-- are there any languages other than english that we expect to support?
-- i notice there isn't alt-text for some or all of the lede images -- how do we ensure this gap gets filled going forward?
 
 # Docs from CRA:
 

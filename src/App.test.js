@@ -20,7 +20,8 @@ it("renders without crashing", () => {
 	Normally, I'd want to add more thorough tests, 
 	but given the time constraints, I focused on 
 	getting the essential minimum of coverage with a suite of 
-	snapshot tests to keep track of changes
+	snapshot tests to keep track of changes and focused more 
+	time on the actual build. 
 */
 
 describe("snapshot suite", () => {
