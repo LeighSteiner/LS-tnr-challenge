@@ -7,7 +7,7 @@ import { render } from "@testing-library/react";
 import CustomNav from "./CustomNav";
 import TopCardList from "./TopCardList";
 import LowerResultList from "./LowerResultList";
-import Search from './Search'
+import Search from "./Search";
 import App from "./App";
 
 it("renders without crashing", () => {
@@ -15,7 +15,6 @@ it("renders without crashing", () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-
 
 /*
 	Normally, I'd want to add more thorough tests, 
@@ -29,12 +28,12 @@ describe("snapshot suite", () => {
     const { container } = render(<CustomNav />);
     expect(container).toMatchSnapshot();
   });
-   it("TopCardList looks right", () => {
-    const { container } = render(<TopCardList articles={[]}/>);
+  it("TopCardList looks right", () => {
+    const { container } = render(<TopCardList articles={[]} />);
     expect(container).toMatchSnapshot();
   });
   it("LowerResultList looks right", () => {
-    const { container } = render(<LowerResultList  articles={[]} />);
+    const { container } = render(<LowerResultList articles={[]} />);
     expect(container).toMatchSnapshot();
   });
   it("Search looks right", () => {
