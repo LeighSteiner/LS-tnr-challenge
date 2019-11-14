@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CustomNav from './CustomNav';
-import TopCardList from './TopCardList';
-import LowerResultList from './LowerResultList';
+import CustomNav from "./CustomNav";
+import TopCardList from "./TopCardList";
+import LowerResultList from "./LowerResultList";
 
 class Search extends React.Component {
   constructor(props) {

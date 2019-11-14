@@ -25,4 +25,4 @@ const CustomNav = __ => (
   </nav>
 );
 
-export default CustomNav
+export default CustomNav;
