@@ -23,15 +23,18 @@ class Search extends React.Component {
       <div>
         <CustomNav />
         <main id="main">
-         <span className="search">
-          <label className="search__label" htmlFor="search-input"> Search:{" "} </label>
-          <input
-            id="search-input"
-            className="search__input"
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
+          <span className="search">
+            <label className="search__label" htmlFor="search-input">
+              {" "}
+              Search:{" "}
+            </label>
+            <input
+              id="search-input"
+              className="search__input"
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
           </span>
           <SearchResults term={this.state.value} />
         </main>
@@ -102,8 +105,17 @@ const CustomNav = __ => (
     <i className="fas fa-bars fa-2x hamburgerIcon" />
     <img className="logo" alt="TNR logo" src={logo} />
     <img className="header" alt="The New Republic" src={title} />
-    <a href="https://newrepublic.com/magazine" className="nav__link nav__link--mag"> MAGAZINE </a>
-    <a href="/imaginary-subscription-page" className="nav__link nav__link--sub"> SUBSCRIBE </a>
+    <a
+      href="https://newrepublic.com/magazine"
+      className="nav__link nav__link--mag"
+    >
+      {" "}
+      MAGAZINE{" "}
+    </a>
+    <a href="/imaginary-subscription-page" className="nav__link nav__link--sub">
+      {" "}
+      SUBSCRIBE{" "}
+    </a>
   </nav>
 );
 const TopCardList = props => {
@@ -172,15 +184,19 @@ const LowerResultList = props => {
                 />
               )}
               <span className="lowerResult__text">
-              <span
-                className="lowerResult__title"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(article.title)
-                }}
-              />
-              <span className="lowerResult__author">
-                {article.authors.map((author, ind) => ind < article.authors.length - 1  ? author.name + ", " : author.name)}
-              </span>
+                <span
+                  className="lowerResult__title"
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(article.title)
+                  }}
+                />
+                <span className="lowerResult__author">
+                  {article.authors.map((author, ind) =>
+                    ind < article.authors.length - 1
+                      ? author.name + ", "
+                      : author.name
+                  )}
+                </span>
               </span>
             </a>
           </li>
@@ -238,8 +254,7 @@ LowerResultList.propTypes = {
         height: PropTypes.number
       })
     })
-  ),
+  )
 };
-
 
 export default Search;
