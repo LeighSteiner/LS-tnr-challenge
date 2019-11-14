@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot suite CustomNav looks right 1`] = `
+<div>
+  <nav
+    class="nav"
+  >
+    <a
+      class="skipNav"
+      href="#main"
+    >
+      skip navigation
+       
+    </a>
+    <i
+      class="fas fa-bars fa-2x hamburgerIcon"
+    />
+    <img
+      alt="TNR logo"
+      class="logo"
+      src="logo.jpg"
+    />
+    <img
+      alt="The New Republic"
+      class="header"
+      src="TNRTitle.png"
+    />
+    <a
+      class="nav__link nav__link--mag"
+      href="https://newrepublic.com/magazine"
+    >
+       
+      MAGAZINE
+       
+    </a>
+    <a
+      class="nav__link nav__link--sub"
+      href="/imaginary-subscription-page"
+    >
+       
+      SUBSCRIBE
+       
+    </a>
+  </nav>
+</div>
+`;
+
+exports[`snapshot suite LowerResultList looks right 1`] = `
+<div>
+  <span>
+    <ul
+      class="lowerResultList"
+    />
+  </span>
+</div>
+`;
+
+exports[`snapshot suite Search looks right 1`] = `
+<div>
+  <div>
+    <nav
+      class="nav"
+    >
+      <a
+        class="skipNav"
+        href="#main"
+      >
+        skip navigation
+         
+      </a>
+      <i
+        class="fas fa-bars fa-2x hamburgerIcon"
+      />
+      <img
+        alt="TNR logo"
+        class="logo"
+        src="logo.jpg"
+      />
+      <img
+        alt="The New Republic"
+        class="header"
+        src="TNRTitle.png"
+      />
+      <a
+        class="nav__link nav__link--mag"
+        href="https://newrepublic.com/magazine"
+      >
+         
+        MAGAZINE
+         
+      </a>
+      <a
+        class="nav__link nav__link--sub"
+        href="/imaginary-subscription-page"
+      >
+         
+        SUBSCRIBE
+         
+      </a>
+    </nav>
+    <main
+      id="main"
+    >
+      <span
+        class="search"
+      >
+        <label
+          class="search__label"
+          for="search-input"
+        >
+           
+          Search:
+           
+        </label>
+        <input
+          class="search__input"
+          id="search-input"
+          type="text"
+          value=""
+        />
+      </span>
+      <div>
+        <span />
+        <ul
+          class="topResults"
+        />
+        <span>
+          <ul
+            class="lowerResultList"
+          />
+        </span>
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`snapshot suite TopCardList looks right 1`] = `
+<div>
+  <ul
+    class="topResults"
+  />
+</div>
+`;
