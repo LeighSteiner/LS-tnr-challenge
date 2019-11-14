@@ -23,53 +23,22 @@ class Search extends React.Component {
       <div>
         <CustomNav />
         <main id="main">
-          Search:{" "}
+         <span className="search">
+          <label className="search__label" htmlFor="search-input"> Search:{" "} </label>
           <input
+            id="search-input"
+            className="search__input"
             type="text"
             value={this.state.value}
             onChange={this.handleChange}
           />
+          </span>
           <SearchResults term={this.state.value} />
         </main>
       </div>
     );
   }
 }
-
-const TitlesOnlyListContainer = ({ articles }) => {
-  return (
-    <div>
-      {articles.map(article => (
-        <li key={article.nid}>
-          <a href={article.url}>{article.title}</a>
-        </li>
-      ))}
-    </div>
-  );
-};
-
-TitlesOnlyListContainer.propTypes = {
-  articles: PropTypes.arrayOf(
-    PropTypes.shape({
-      nid: PropTypes.number,
-      title: PropTypes.string,
-      slug: PropTypes.string,
-      publishedAt: PropTypes.string,
-      url: PropTypes.string,
-      authors: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string,
-          slug: PropTypes.string
-        })
-      ),
-      ledeImage: PropTypes.shape({
-        src: PropTypes.string,
-        width: PropTypes.number,
-        height: PropTypes.number
-      })
-    })
-  )
-};
 
 class SearchResults extends React.Component {
   constructor(props) {
@@ -108,9 +77,6 @@ class SearchResults extends React.Component {
     });
   }
 
-  // render() {
-  //   return <TitlesOnlyListContainer articles={this.state.articles}/>
-  // }
   render() {
     return (
       <div>
@@ -133,11 +99,11 @@ const CustomNav = __ => (
     <a className="skipNav" href="#main">
       skip navigation{" "}
     </a>
-    <i class="fas fa-bars fa-2x hamburgerIcon" />
-    <img className="logo" src={logo} />
-    <img className="header" src={title} />
-    <a className="nav__link"> MAGAZINE </a>
-    <a className="nav__link"> SUBSCRIBE </a>
+    <i className="fas fa-bars fa-2x hamburgerIcon" />
+    <img className="logo" alt="TNR logo" src={logo} />
+    <img className="header" alt="The New Republic" src={title} />
+    <a href="https://newrepublic.com/magazine" className="nav__link nav__link--mag"> MAGAZINE </a>
+    <a href="/imaginary-subscription-page" className="nav__link nav__link--sub"> SUBSCRIBE </a>
   </nav>
 );
 const TopCardList = props => {
@@ -189,7 +155,7 @@ const LowerResultList = props => {
       <ul className="lowerResultList">
         {props.articles.map((article, ind) => (
           <li className="searchCard searchCard--rest" key={ind}>
-            <a href={article.urlFull}>
+            <a className="searchCard--restLink" href={article.urlFull}>
               {article.ledeImage ? (
                 <img
                   className="lowerResult__image"
@@ -205,6 +171,7 @@ const LowerResultList = props => {
                   src="http://placekitten.com/g/200/200"
                 />
               )}
+              <span className="lowerResult__text">
               <span
                 className="lowerResult__title"
                 dangerouslySetInnerHTML={{
@@ -212,7 +179,8 @@ const LowerResultList = props => {
                 }}
               />
               <span className="lowerResult__author">
-                {article.authors.map(author => author.name)}
+                {article.authors.map((author, ind) => ind < article.authors.length - 1  ? author.name + ", " : author.name)}
+              </span>
               </span>
             </a>
           </li>
@@ -221,9 +189,57 @@ const LowerResultList = props => {
     </span>
   );
 };
+
 SearchResults.propTypes = {
   term: PropTypes.string,
   limit: PropTypes.number
 };
+
+TopCardList.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      nid: PropTypes.number,
+      title: PropTypes.string,
+      slug: PropTypes.string,
+      publishedAt: PropTypes.string,
+      url: PropTypes.string,
+      authors: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          slug: PropTypes.string
+        })
+      ),
+      ledeImage: PropTypes.shape({
+        src: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number
+      })
+    })
+  )
+};
+
+LowerResultList.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      nid: PropTypes.number,
+      title: PropTypes.string,
+      slug: PropTypes.string,
+      publishedAt: PropTypes.string,
+      url: PropTypes.string,
+      authors: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          slug: PropTypes.string
+        })
+      ),
+      ledeImage: PropTypes.shape({
+        src: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number
+      })
+    })
+  ),
+};
+
 
 export default Search;
